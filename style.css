@@ -15,6 +15,10 @@ body {
     padding: 20px;
 }
 
+html {
+    background: #0f0f12;
+}
+
 .mac-window {
     width: 92%;
     max-width: 1240px;
@@ -1019,12 +1023,25 @@ body {
 
 @media (max-width: 760px) {
     body {
-        padding: 10px;
+        padding-top: max(10px, env(safe-area-inset-top));
+        padding-right: max(10px, env(safe-area-inset-right));
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        padding-left: max(10px, env(safe-area-inset-left));
+        min-height: 100vh;
+        min-height: 100svh;
+        min-height: 100dvh;
+        background: url("imagens/fundo.jpg") center / cover no-repeat;
+        background-attachment: scroll;
     }
 
     .mac-window {
-        width: 98%;
-        height: 95vh;
+        width: 100%;
+        height: calc(100vh - 20px);
+        height: calc(100svh - 20px);
+        height: calc(100dvh - 20px);
+        max-height: none;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.86);
     }
 
     .mobile-menu-btn {
